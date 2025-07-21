@@ -14,7 +14,7 @@ public class Ciclabile {
 
     public int getElementoSuccessivo() {
         int elem = elenco[indice];
-        indice++;
+        this.indice++;
         return elem;
     }
 
@@ -32,5 +32,23 @@ public class Ciclabile {
 
     public Ciclabile(int[] elenco) {
         this.elenco = elenco;
+    }
+
+    public Ciclabile() {
+        this.elenco = new int[0];
+    }
+
+    public void addElemento(int elemento) {
+
+        int[] elencoNuovo = new int[this.elenco.length + 1];
+
+        for (int i = 0; i < this.elenco.length; i++) {
+            elencoNuovo[i] = this.elenco[i];
+        }
+
+        elencoNuovo[this.elenco.length] = elemento;
+
+        this.elenco = elencoNuovo;
+
     }
 }
